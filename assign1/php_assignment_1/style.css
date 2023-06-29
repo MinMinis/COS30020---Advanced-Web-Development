@@ -1,0 +1,303 @@
+* {
+	background-color: transparent;
+}
+h1 {
+	text-align: center;
+	text-decoration: underline;
+	font-size: 18;
+}
+article {
+	text-align: center;
+	width: 50%;
+	margin: auto;
+}
+.index_content {
+	position: relative;
+	left: 20%;
+	width: 50%;
+	background-color: rgb(236, 248, 249);
+	padding: 10px;
+}
+footer {
+	text-align: center;
+	padding: 10px;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background-color: rgb(93, 172, 189);
+	color: white;
+	left: -3px;
+	overflow: hidden;
+}
+p input[type="checkbox"] {
+	padding: 10px;
+	position: relative;
+	bottom: -3px;
+	accent-color: rgb(100, 157, 173);
+}
+.menu-link {
+	text-decoration: none;
+	color: black;
+	padding: 5px;
+	position: relative;
+	display: block;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	background-color: aqua;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 18px;
+	border-radius: 10px;
+}
+.menu-link:hover {
+	background-color: rgb(28, 56, 121);
+	color: white;
+	position: relative;
+}
+
+main {
+	position: relative;
+	top: 70px;
+	margin-bottom: 200px;
+}
+.declaration {
+	width: 80%;
+	margin: auto;
+}
+#index_img {
+	scale: 4, 3;
+	width: 40%;
+	position: absolute;
+	left: 0;
+}
+@media screen and (max-width: 1200px) {
+	.menu-link {
+		width: 80%;
+	}
+}
+/* Post job form */
+.postjobform {
+	margin: auto;
+	width: 50%;
+	padding: 10px;
+	top: 10px;
+	position: relative;
+	background: rgba(0, 0, 0, 0.35);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(5.2px);
+	border: 1px solid rgba(0, 0, 0, 0.62);
+	top: 10%;
+}
+@media screen and (max-width: 800px) {
+	.postjobform {
+		width: 80%;
+	}
+}
+.postjobformmain {
+	background-image: url("css/jobposting1.jpg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	width: 100%;
+	margin-bottom: 5%;
+	height: 500px;
+}
+.formbutton {
+	background-color: rgb(175, 211, 226);
+	color: rgb(20, 108, 148);
+	padding: 8px;
+	margin: 0 auto;
+	width: 25%;
+	margin-top: 10px;
+	position: relative;
+}
+.formbutton:hover {
+	background-color: rgb(10, 77, 104);
+	color: white;
+}
+label {
+	color: white;
+}
+.postjobform > input {
+	padding: 3px;
+	margin: 5px;
+	margin-left: 10px;
+}
+.postjobform > * {
+	display: inline-block;
+}
+textarea {
+	margin: auto;
+	position: relative;
+	border: 1px solid black;
+	color: white;
+	overflow-x: hidden;
+	overflow-y: auto;
+	word-wrap: break-word;
+}
+.job_form_attr {
+	accent-color: rgb(10, 77, 104);
+	position: relative;
+	top: 2px;
+}
+.job_form_attr:hover {
+	accent-color: cyan;
+}
+input[type="text"] {
+	border: 1px solid black;
+	border-radius: 2px;
+}
+input[type="text"]:focus,
+textarea:focus {
+	background-color: white;
+	color: black;
+}
+input[type="text"] {
+	color: white;
+}
+input[type="submit"],
+input[type="reset"] {
+	border-radius: 10px;
+}
+.section_job_form {
+	position: relative;
+	left: 10%;
+}
+.back_line {
+	position: relative;
+	text-align: center;
+	top: -1000px;
+	font-size: 1.2rem;
+}
+.job_form_line {
+	background-color: white;
+}
+@media screen and (max-width: 1600px) and (min-width: 1000px) {
+	.back_line {
+		top: -45px;
+	}
+}
+@media screen and (max-width: 800px) {
+	.back_line {
+		top: 0px;
+	}
+}
+a {
+	color: black;
+}
+select {
+	color: white;
+}
+select > * {
+	color: black;
+}
+/* search job form */
+#searchjobform {
+	width: 100%;
+}
+#search_job_button {
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: 20px;
+	width: 30%;
+	background-color: white;
+	color: black;
+}
+#search_job_button:hover {
+	background-color: black;
+	color: white;
+}
+/* About page */
+.about_ques {
+	margin-top: 40px;
+	width: 100%;
+}
+/* search job process and post job process */
+.error {
+	color: red;
+}
+.success {
+	color: green;
+	margin-top: 100px;
+	margin-bottom: 100px;
+	position: relative;
+}
+table {
+	border: 1px solid black;
+	border-collapse: collapse;
+	width: 100%;
+}
+td,
+th {
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 5px;
+}
+.display_content {
+	width: 100%;
+}
+/* test place */
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	box-sizing: border-box;
+	align-items: stretch;
+}
+.row > * {
+	box-sizing: border-box;
+	background-color: transparent;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	margin: auto;
+	text-align: center;
+}
+.row > .smallblock {
+	width: 45%;
+}
+.smallblock > * {
+	width: 100%;
+	white-space: nowrap;
+}
+.row > .block {
+	width: 100%;
+}
+.label {
+	font-weight: bold;
+}
+.rad_check {
+	box-sizing: none;
+	flex-wrap: nowrap;
+	padding-left: 5px;
+	padding-bottom: 10px;
+}
+.searchformain {
+	margin-top: 50px;
+	margin-bottom: 100px;
+	background-image: url("css/theme1.jpg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	width: 100%;
+	height: 400px;
+}
+.searchforarticle {
+	position: relative;
+	top: 100px;
+}
+.found {
+	color: green;
+}
+.about_ol {
+	font-size: 20px;
+}
+.about_ol > li {
+	font-weight: bold;
+}
+#evidence {
+	max-width: 800px;
+	width: 100%;
+	height: 100%;
+}

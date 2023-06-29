@@ -2,23 +2,21 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Thanh Minh" />
-    <meta name="description" content="Web Developer" />
-    <meta name="keywords" content="HTML, CSS, PHP" />
-    <link rel="stylesheet" href="style.css" />
-    <script async data-id="five-server" src="http://localhost:5500/fiveserver.js"></script>
-    <title>Search Job Result Test</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Thanh Minh">
+    <meta name="description" content="Web Developer">
+    <meta name="keywords" content="HTML, CSS, PHP">
+    <link rel="stylesheet" href="style.css">
+    <title>Search Job Result</title>
 </head>
 
 <body>
     <?php
-    $dir = "./data/jobposts/";
-    $filename = "./job.txt";
-    // $filename = "../../data/jobposts/job.txt";
-    function sanitise_input($data)
+    $dir = "../../data/jobposts/";
+    $filename = "jobs.txt";
+    function sanitize_input($data)
     {
         $data = trim($data);
         $data = stripslashes($data);
@@ -34,7 +32,7 @@
     if (!empty($_GET["searchterm"]) && isset($_GET["searchterm"])) { //check if the input is filled or not
         if (file_exists($dir . $filename)) { //check if the file exist or not
             $handle = fopen($dir . $filename, "r"); //open file for read
-            $search_term = sanitise_input($_GET['searchterm']); //remove case of code injection
+            $search_term = sanitize_input($_GET['searchterm']); //remove case of code injection
             $search_job_crit  = array(); // array of value for storing the checkbox values 
             if (isset($_GET['search_job_crit'])) { //check the input for the checkboxes
                 foreach ($_GET['search_job_crit'] as $value) { //foreach checkbox is checked
@@ -114,7 +112,7 @@
                 }
             }
             fclose($handle); //close the file
-            $current_date = date("d/m/Y"); // get the day in d/m/Y format
+            $current_date = date("d/m/y"); // get the day in d/m/Y format
             function compareDate($date1, $date2) // 2 parameters in array
             {
                 $array_date1 = explode("/", $date1); //explode into array to compare
@@ -151,14 +149,20 @@
                     $display_results[] = $result; // add the valid day item data to array to display
                 }
             }
+
             usort( //using usort to sort the arrays based on the element in the array
                 $display_results, //used array
                 function ($a, $b) {
-                    $date1 = DateTime::createFromFormat('d/m/Y', current($a)['day']); //take out the data in the object format to compare
-                    $date2 = DateTime::createFromFormat('d/m/Y', current($b)['day']); //Y is for 4 year digits
-                    return $date2 <=> $date1; // if the first date is before the second date, return false;
+                    $date1 = DateTime::createFromFormat('d/m/y', current($a)['day']); //take out the current data in the object format to compare
+                    $date2 = DateTime::createFromFormat('d/m/y', current($b)['day']);
+                    if ($date1 == $date2) {
+                        return 0;
+                    }
+                    return ($date1 < $date2) ? 1 : -1; //  if the first date is before the second date, return false;
                 }
             );
+
+
             if (count($display_results) == 0) { //if there is no found result
                 $structure .= "<p class=\"error\">No results were found.</p>" . $error_msg;
             } else {

@@ -2,14 +2,13 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Thanh Minh" />
-    <meta name="description" content="Web Developer" />
-    <meta name="keywords" content="HTML, CSS, PHP" />
-    <link rel="stylesheet" href="style.css" />
-    <script async data-id="five-server" src="http://localhost:5500/fiveserver.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Thanh Minh">
+    <meta name="description" content="Web Developer">
+    <meta name="keywords" content="HTML, CSS, PHP">
+    <link rel="stylesheet" href="style.css">
     <title>About Page</title>
 </head>
 
@@ -48,7 +47,8 @@
                         is unique or not.
                     </li>
                     <li>
-                        I have done the search job form so that if the user check any checkbox, the system will only
+                        I have done the <a href="searchjobform.php">search job form</a> so that if the user check any
+                        checkbox, the system will only
                         file the search term word for that criteria. Furthermore, if the user don't check any checkbox
                         then the system will search for that string in all criteria.
                     </li>
@@ -60,12 +60,11 @@
                 </li>
                 <ul>
                     <li>
-                        <img src="./css/evidence.png" id="evidence" alt="Evidence of not joining discussion point" />
+                        <img src="./css/evidence.png" id="evidence" alt="Evidence of joining discussion point">
                     </li>
                     <li>
-                        I didn't join any discussion point in the unit's discussion board because throughout the process
-                        of doing the lab, I have understood the use of the built-in function of PHP so that I can
-                        research a little bit beyond that to apply to the Assignment 1.
+                        I have joined the discussion on Canvas to solve a PHP problem for rotating array using class
+                        which I have research a little bit about OOP concepts in PHP.
                     </li>
                 </ul>
             </ol>

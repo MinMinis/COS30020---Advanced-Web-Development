@@ -48,6 +48,7 @@ p input[type="checkbox"] {
 	margin-left: auto;
 	margin-right: auto;
 	font-size: 18px;
+	border-radius: 10px;
 }
 .menu-link:hover {
 	background-color: rgb(28, 56, 121);
@@ -95,7 +96,7 @@ main {
 	}
 }
 .postjobformmain {
-	background-image: url("css/jobposting.jpg");
+	background-image: url("css/jobposting1.jpg");
 	background-size: 100%;
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -132,6 +133,9 @@ textarea {
 	position: relative;
 	border: 1px solid black;
 	color: white;
+	overflow-x: hidden;
+	overflow-y: auto;
+	word-wrap: break-word;
 }
 .job_form_attr {
 	accent-color: rgb(10, 77, 104);
@@ -153,6 +157,10 @@ textarea:focus {
 input[type="text"] {
 	color: white;
 }
+input[type="submit"],
+input[type="reset"] {
+	border-radius: 10px;
+}
 .section_job_form {
 	position: relative;
 	left: 10%;
@@ -161,6 +169,10 @@ input[type="text"] {
 	position: relative;
 	text-align: center;
 	top: -1000px;
+	font-size: 1.2rem;
+}
+.job_form_line {
+	background-color: white;
 }
 @media screen and (max-width: 1600px) and (min-width: 1000px) {
 	.back_line {
@@ -264,7 +276,7 @@ th {
 .searchformain {
 	margin-top: 50px;
 	margin-bottom: 100px;
-	background-image: url("css/theme.jpg");
+	background-image: url("css/theme1.jpg");
 	background-size: 100%;
 	background-repeat: no-repeat;
 	background-position: center center;

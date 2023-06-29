@@ -1,0 +1,555 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+@font-face {
+	font-family: baguede;
+	src: url(style/BaguedeFree-Regular.otf);
+}
+* {
+	font-family: baguede;
+}
+nav {
+	position: relative;
+	margin: auto;
+	width: 400px;
+	height: 50px;
+	background: #17181c;
+	border-radius: 8px;
+	font-size: 0;
+	box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+}
+header {
+	padding-top: 10px;
+}
+nav a {
+	font-size: 15px;
+	text-transform: uppercase;
+	color: white;
+	text-decoration: none;
+	line-height: 50px;
+	position: relative;
+	z-index: 1;
+	display: inline-block;
+	text-align: center;
+}
+h1 {
+	text-align: center;
+	font-family: baguede;
+}
+.body-head {
+	font-family: baguede;
+}
+nav #animation {
+	position: absolute;
+	height: 100%;
+	top: 0;
+	z-index: 0;
+	background: rgb(153, 219, 245);
+	border-radius: 8px;
+	transition: all 0.5s ease 0s;
+}
+nav a:nth-child(n) {
+	width: 100px;
+}
+.nav-home,
+a:nth-child(1):hover ~ #animation {
+	width: 100px;
+	left: 0;
+}
+.nav-login,
+nav a:nth-child(2):hover ~ #animation {
+	width: 100px;
+	left: 100px;
+}
+.nav-signup,
+nav a:nth-child(3):hover ~ #animation {
+	width: 100px;
+	left: 200px;
+}
+.nav-about,
+nav a:nth-child(4):hover ~ #animation {
+	width: 100px;
+	left: 300px;
+}
+/* Login part */
+.login-main {
+	width: 100%;
+	background: url("style/login-theme.jpg") no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+.login-section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 85vh;
+	width: 100%;
+}
+.form-box {
+	position: relative;
+	width: 400px;
+	height: 450px;
+	background: transparent;
+	border: 2px solid rgba(255, 255, 255, 0.5);
+	border-radius: 20px;
+	backdrop-filter: blur(15px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+h2.sign {
+	font-size: 2em;
+	color: #fff;
+	text-align: center;
+}
+.input-div {
+	position: relative;
+	margin: 30px 0;
+	width: 310px;
+	border-bottom: 2px solid #fff;
+}
+.input-div .label {
+	position: absolute;
+	top: 50%;
+	left: 5px;
+	transform: translateY(-50%);
+	color: #fff;
+	font-size: 1em;
+	pointer-events: none;
+	transition: all 0.3s ease;
+}
+input[type="text"]:focus ~ label,
+input[type="text"]:valid ~ label,
+input[type="password"]:focus ~ label,
+input[type="password"]:valid ~ label {
+	top: -0px;
+}
+
+input[type="text"],
+input[type="password"] {
+	width: 100%;
+	height: 50px;
+	background: transparent;
+	border: none;
+	outline: none;
+	font-size: 1em;
+	padding: 0 35px 0 5px;
+	color: #fff;
+}
+.input-div ion-icon {
+	position: absolute;
+	right: 8px;
+	color: #fff;
+	font-size: 1.2em;
+	top: 20px;
+}
+.submit-button {
+	width: 100%;
+	height: 40px;
+	border-radius: 40px;
+	background: #fff;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	font-size: 1em;
+	font-weight: 600;
+	transition: ease 0.5s;
+}
+.submit-button:hover {
+	border-radius: 40px;
+	background: #17181c;
+	color: white;
+	transform: scale(1.1);
+}
+.register {
+	font-size: 0.9em;
+	color: #fff;
+	text-align: center;
+	margin: 25px 0 10px;
+}
+.register p a {
+	text-decoration: none;
+	color: #fff;
+	font-weight: 600;
+}
+.register p a:hover {
+	text-decoration: underline;
+}
+
+/* Sign Up part */
+.signup-main {
+	width: 100%;
+	background: url("style/register-theme.jpg") no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+.register-head {
+	color: white;
+}
+.signup-section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 85vh;
+	max-height: max-content;
+	width: 100%;
+}
+.signup-box {
+	position: relative;
+	width: 400px;
+	min-height: 550px;
+	max-height: max-content + 200px;
+	background: transparent;
+	border: 2px solid rgba(255, 255, 255, 0.5);
+	border-radius: 20px;
+	backdrop-filter: blur(15px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.error-message {
+	color: #ef4b4c;
+}
+.remind-message {
+	color: #ef4b4c;
+	text-align: center;
+}
+
+/* friend add page */
+.friendhead {
+	text-align: center;
+}
+.table_body {
+	justify-content: center;
+	display: flex;
+	align-items: center;
+}
+.friendadd-main {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+table,
+th,
+td {
+	padding: 1rem;
+	border-collapse: collapse;
+}
+thead,
+th {
+	position: sticky;
+	top: 5px;
+	left: 0;
+	background-color: #3e619b;
+	color: white;
+}
+tbody {
+	position: relative;
+	top: 5px;
+}
+.table {
+	background-color: #fff5;
+	border-radius: 10px;
+	width: 50%;
+	margin: auto;
+	backdrop-filter: blur(8px);
+	box-shadow: 0 0.4rem 0.8rem #17181c;
+	overflow: auto;
+}
+tbody tr:nth-child(even) {
+	background-color: #0000000b;
+	border-radius: 15px;
+}
+tbody tr:hover {
+	background-color: #fff6;
+	transition: 0.5s ease-in-out;
+}
+.add-button {
+	background-color: #2f4875;
+	color: white;
+	border-radius: 10px;
+	padding: 0.6rem;
+	transition: 0.5s ease-in-out;
+}
+.add-button:hover {
+	background-color: white;
+	color: #2f4875;
+	border: 1px solid #2f4875;
+}
+.friendadd-foot {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	padding: 1rem;
+	position: fixed;
+	bottom: 0px;
+}
+.next-prev-div {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	padding: 1rem;
+}
+.next-prev-div > * {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.prev-button,
+.next-button {
+	border-radius: 5px;
+	background-color: #42506b;
+	padding: 0.5rem;
+	transition: 0.5s ease-in-out;
+	text-decoration: none;
+	color: #e9e9eb;
+}
+.prev-button:hover,
+.next-button:hover {
+	background-color: white;
+	color: #17181c;
+	border: 1px solid #17181c;
+}
+.friendlist-button,
+.logout-button {
+	padding: 1rem;
+	padding-left: 50px;
+	padding-right: 50px;
+	border-radius: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.friendlist-button,
+.logout-button {
+	text-decoration: none;
+}
+.friendlist-button {
+	background-color: #517de0;
+	transition: 0.8s ease-in-out;
+	font-size: 1.1rem;
+	color: white;
+	box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+}
+.friendlist-button:hover {
+	background-color: white;
+	border: 1px solid #2f419e;
+	color: #2f419e;
+}
+.friendlist-button:active {
+	box-shadow: 4px 4px 12px #c5c5c5, -4px -4px 12px #ffffff;
+}
+
+.logout-button {
+	background-color: #ef4b4c;
+	transition: 0.8s ease-in-out;
+	font-size: 1.2rem;
+	color: white;
+	box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+}
+.logout-button:active {
+	box-shadow: 4px 4px 12px #c5c5c5, -4px -4px 12px #ffffff;
+}
+.logout-button:hover {
+	background-color: white;
+	border: 1px solid #991b1c;
+	color: #991b1c;
+}
+
+/* friendlist page */
+.friendlist-body {
+	background-repeat: no-repeat;
+	background-position: center;
+	height: max-content;
+}
+
+.friendlist-main {
+	height: max-content;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.table-div {
+	display: flex;
+	width: 100%;
+	min-height: calc(68.5vh - 20px);
+	max-height: calc(100vh - 20px);
+	position: relative;
+}
+.friendlist-table {
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}
+.friendlist-tbody:nth-child(2) {
+	width: 100px;
+}
+.unfriend-button {
+	background-color: #ef4b4c;
+	color: white;
+	border-radius: 5px;
+	padding: 0.5rem;
+	transition: 0.8s ease-out;
+}
+.unfriend-button:hover {
+	background-color: white;
+	color: #991b1c;
+	border: 1px solid #991b1c;
+}
+.view-button {
+	background-color: green;
+	color: white;
+	border-radius: 10px;
+	padding: 0.5rem;
+	transition: 0.8s ease-out;
+}
+.view-button:hover {
+	background-color: white;
+	color: #17181c;
+}
+.expanse-cell {
+	width: 180px;
+	text-align: center;
+}
+.friendlist-foot {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	padding: 1rem;
+}
+
+/* index page */
+.index-quote {
+	margin: auto;
+	margin-left: 0px;
+	display: flex;
+	position: relative;
+	color: white;
+	border-radius: 10px;
+	border: 1px solid black;
+	width: 40%;
+	grid-column: 1 / span 2;
+	grid-row: 1 / span 2;
+}
+.success {
+	color: green;
+	text-align: center;
+}
+.index-info {
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	align-items: center;
+	align-content: center;
+	border-radius: 10px;
+	border: 1px solid black;
+	width: 30%;
+	box-shadow: 12px 12px 30px #7b7b7b, -12px -12px 30px #ffffff;
+	background-color: white;
+}
+.index-message {
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: 1px solid black;
+	border-radius: 18px;
+	padding: 1rem;
+	width: 30%;
+	margin-top: 50px;
+	margin-bottom: 10px;
+	box-shadow: 12px 12px 30px #7b7b7b, -12px -12px 30px #ffffff;
+	background-color: white;
+}
+.header-index {
+	border-radius: 10px;
+	border: 1px solid black;
+}
+.index-main {
+	background-image: url(style/theme3.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 100%;
+	height: 100vh;
+	background-size: cover;
+}
+/* about page */
+.about-div > ul > li,
+.about-div > ul > ul > li {
+	font-size: 20px;
+	padding: 8px;
+}
+.about-div > ul > li {
+	font-weight: bold;
+}
+.about-div > ul > ul > li > a {
+	color: black;
+}
+
+/* profile page */
+.profile-image {
+	width: 200px;
+	border-radius: 20px;
+	display: flex;
+	position: relative;
+}
+.display-image {
+	display: flex;
+}
+.profile-part {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem;
+}
+.profile-part > * {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	padding: 0.5rem;
+}
+
+.profile_body > div {
+	padding: 1rem;
+}
+.profile-div {
+	display: flex;
+	width: 100%;
+	max-width: 1200px;
+}
+.profile {
+	border-radius: 10px;
+	width: 100%;
+	margin: auto;
+	overflow: auto;
+}
+.profile_body {
+	width: 100%;
+	justify-content: center;
+	display: flex;
+	align-items: center;
+}
+.profile-container {
+	background-repeat: no-repeat;
+	background-position: center;
+	height: max-content;
+	width: 100%;
+}
+.profile-main {
+	height: max-content;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.profile-foot {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	padding: 1rem;
+	position: fixed;
+	bottom: 5px;
+}

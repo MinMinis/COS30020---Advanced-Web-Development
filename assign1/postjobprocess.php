@@ -2,26 +2,26 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Thanh Minh" />
-    <meta name="description" content="Web Developer" />
-    <meta name="keywords" content="HTML, CSS, PHP" />
-    <link rel="stylesheet" href="style.css" />
-    <script async data-id="five-server" src="http://localhost:5500/fiveserver.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Thanh Minh">
+    <meta name="description" content="Web Developer">
+    <meta name="keywords" content="HTML, CSS, PHP">
+    <link rel="stylesheet" href="style.css">
     <title>Post Job Result</title>
 </head>
 
 <body>
     <?php
-    function sanitise_input($data)
+    function sanitize_input($data)
     {
         $data = trim($data);
         $data = stripslashes($data);
         $data = htmlspecialchars($data);
         return $data;
     }
+    umask(0007);
     $applicationby = isset($_POST['post']) || isset($_POST['email']); //check if the one of the checboxes is check or not
     $returnlink = "<a href=\"postjobform.php\" class=\"menu-link\">Post Job Form</a>";
     $homepage = "<a href=\"index.php\" class=\"menu-link\">Home Page</a>";
@@ -32,20 +32,17 @@
     $structure .= "</header>";
     $structure .= "<article>";
     //file and directory for use
-    //$dir = "../../data/jobposts";
-    $dir = "./data/jobposts/";
-    $filename = "./job.txt";
-    // $filename = "../../data/jobposts/job.txt";
+    $dir = "../../data/jobposts/";
+    $filename = "jobs.txt";
     if (isset($_POST['submit'])) { // if the user has submitted
-        if (isset(
-            $_POST['positionid'],
-            $_POST['title'],
-            $_POST['description'],
-            $_POST['closingdate'],
-            $_POST['position'],
-            $_POST['contract'],
-            $_POST['location'],
-        ) && $applicationby) { // check the data if it has submitted fully
+        if (
+            isset($_POST['positionid']) && isset($_POST['title']) && isset($_POST['description'])
+            && isset($_POST['closingdate'])
+            && isset($_POST['position'])
+            && isset($_POST['contract'])
+            && isset($_POST['location']) && (!empty($_POST['location']))
+            && $applicationby
+        ) { // check the data if it has submitted fully
             // assign form value to variables
             $position = $_POST['position'];
             $contract = $_POST['contract'];
@@ -66,16 +63,16 @@
                 'description' => [
                     'length' => 260,
                     'pattern' => '/^[a-zA-Z0-9 ,.!]+$/',
-                    'message' => "The description can only contain a maximum of 260 characters. Can't be empty.",
+                    'message' => "The description can only contain a maximum of 260 characters. The description can't have punctuation. Can't be empty.",
                 ],
                 'closingdate' => [
-                    'pattern' => '/^[0-9]{1,2}\/[0-9]{1,2}\/[0-9]{4}$/',
-                    'length' => 10,
-                    'message' => "Closing Date must follow the dd/mm/yyyy rule. ",
+                    'pattern' => '/^[0-9]{1,2}\/[0-9]{1,2}\/[0-9]{2}$/',
+                    'length' => 8,
+                    'message' => "Closing Date must follow the dd/mm/yy rule. ",
                 ],
             ];
             foreach ($validate_fields as $field => $rules) { // loop for each item in variable $validate_fields
-                if (strlen($_POST[$field]) > $rules['length'] || !preg_match($rules['pattern'], sanitise_input($_POST[$field]))) { // check if the form value is not fit the requirements
+                if (strlen($_POST[$field]) > $rules['length'] || !preg_match($rules['pattern'], sanitize_input($_POST[$field]))) { // check if the form value is not fit the requirements
                     $structure .= "<p class=\"error\">" . $rules['message'] . "</p>";
                     $pattern = false;
                 }
@@ -91,13 +88,13 @@
                 return checkdate($month, $day, $year); //check if day is in correct format such as february if not leap year should have 28 days
             }
             // after processing the validate fields set it into variables for easy use
-            $position_id = sanitise_input($_POST['positionid']);
-            $title = sanitise_input($_POST['title']);
-            $description = sanitise_input($_POST['description']);
-            $closingdate = sanitise_input($_POST['closingdate']);
-            // reassign the variable $applicationby to the value of post and email
+            $position_id = sanitize_input($_POST['positionid']);
+            $title = sanitize_input($_POST['title']);
+            $description = sanitize_input($_POST['description']);
+            $closingdate = sanitize_input($_POST['closingdate']);
+            // assign the variable $application_by to the value of post and email
             if (!empty($_POST['email']) && !empty($_POST['post'])) {
-                $application_by = $_POST['email'] . ',' . $_POST['post'];
+                $application_by = $_POST['email'] . ', ' . $_POST['post'];
             } else if (!empty($_POST['email'])) {
                 $application_by = $_POST['email'];
             } else if (!empty($_POST['post'])) {
@@ -105,7 +102,7 @@
             }
             $newdata = true; //set the default new data to true
             if (!is_dir($dir)) {
-                mkdir($dir) //create directory
+                mkdir($dir, 02770) //create directory
                     or die("Unable to create directory"); //print message
             }
             if (file_exists($dir . $filename)) { // check if the file exist

@@ -2,24 +2,23 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Thanh Minh" />
-    <meta name="description" content="Web Developer" />
-    <meta name="keywords" content="HTML, CSS, PHP" />
-    <link rel="stylesheet" href="style.css" />
-    <script async data-id="five-server" src="http://localhost:5500/fiveserver.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Thanh Minh">
+    <meta name="description" content="Web Developer">
+    <meta name="keywords" content="HTML, CSS, PHP">
+    <link rel="stylesheet" href="style.css">
     <title>Post Job Form</title>
 </head>
 
 <body>
     <?php
     date_default_timezone_set('Asia/Ho_Chi_Minh');
-    $date = date('d/m/Y h:i:s a', time());
+    $date = date('d/m/y');
     $random_id = 'P' . sprintf('%04d', rand(0, 9999));
-    $dir = "./data/jobposts/";
-    $filename = "./job.txt";
+    $dir = "../../data/jobposts/";
+    $filename = "job.txt";
     function checkagainst($file, $randomid)
     {
         $new_id = true; //default is true so if can't find the file, so it is unique id and will create the file in the process stage
@@ -52,11 +51,11 @@
             <section class="row">
                 <section class="smallblock">
                     <label class="label" for="positionid">Position ID: </label>
-                    <input type="text" name="positionid" id="positionid" value=<?php echo $random_id; ?> />
+                    <input type="text" name="positionid" id="positionid" value=<?php echo $random_id; ?>>
                 </section>
                 <section class="smallblock">
                     <label class="label" for="title">Title : </label>
-                    <input type="text" name="title" id="title" />
+                    <input type="text" name="title" id="title">
                 </section>
             </section>
             <section class="row">
@@ -66,7 +65,7 @@
                 </section>
                 <section class="smallblock">
                     <label class="label" for="closingdate">Closing Date: </label>
-                    <input type="text" name="closingdate" id="closingdate" value=<?php echo $date; ?> />
+                    <input type="text" name="closingdate" id="closingdate" value=<?php echo $date; ?>>
                     <label class="label">Position:</label>
                     <section class="rad_check">
                         <input type="radio" class="job_form_attr" name="position" id="position-f" value="Full Time">
@@ -110,15 +109,17 @@
             </section>
             <section class="row">
                 <section class="smallblock">
-                    <input class="formbutton" type="submit" name="submit" value="Post" />
+                    <input class="formbutton" type="submit" name="submit" value="Post">
                 </section>
                 <section class="smallblock">
-                    <input class="formbutton" type="reset" name="reset" value="Reset" />
+                    <input class="formbutton" type="reset" name="reset" value="Reset">
                 </section>
             </section>
         </form>
     </main>
-    <p class="back_line">All fields are required. <a href="index.php">Return to Home Page</a>.</p>
+    <div class="back_line">
+        <p class="job_form_line">All fields are required. <a href="index.php">Return to Home Page</a>.</p>
+    </div>
     <footer>
         <p><strong>Author: </strong>Tran Thanh Minh</p>
         <p><strong>Student ID:</strong> 103809048</p>
