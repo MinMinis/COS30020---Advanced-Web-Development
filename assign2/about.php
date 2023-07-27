@@ -56,8 +56,6 @@ if (!isset($_SESSION['status'])) { // check if the session status is set or not
                         made it so that the current user can't see themselves in the list but the displayed number of
                         total friend is correct.
                     </li>
-                    <li>I also implement another feature but not too interesting but can boost up the user interface
-                        where it will notify the user when user login or sign up or add/delete friends</li>
                 </ul>
                 <li>Which parts did I have trouble with ? </li>
                 <ul>
@@ -75,12 +73,6 @@ if (!isset($_SESSION['status'])) { // check if the session status is set or not
                     <li>
                         I will implement more features like friend request, public/private account, request
                         notification.
-                    </li>
-                    <li>
-                        I will also will remove the error notification error of the user when they enter wrong password
-                        but right username, the system will say the password is wrong, in this case I put it to enhance
-                        the user experience but in real life, I shouldn't do this because it is vulnerable for the word
-                        list attack method.
                     </li>
                     <li>
                         I will also improve the design of the website so that the user can have a more user-friendly
@@ -114,7 +106,11 @@ if (!isset($_SESSION['status'])) { // check if the session status is set or not
                 <li>Screenshot of discussion response</li>
                 <ul>
                     <li>
-                        Add image here.
+                        Question: Could you share instances / examples where we might apply destructors and magic
+                        methods in practical applications?
+                    </li>
+                    <li>
+                        <img src="images/evidence.png" alt="evidence of discussion" class="evidence" />
                     </li>
                 </ul>
             </ul>

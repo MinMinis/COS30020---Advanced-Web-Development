@@ -553,3 +553,6 @@ tbody tr:hover {
 	position: fixed;
 	bottom: 5px;
 }
+.evidence {
+	width: 50%;
+}
